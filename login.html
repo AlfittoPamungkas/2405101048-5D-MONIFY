@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login — MONIFY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="auth-body">
+<div class="auth-wrap">
+  <aside class="auth-side">
+    <div class="logo">MONIFY</div>
+    <div>
+      <h1>Take Control<br>of Your Money.</h1>
+      <p>Manage your money, track your spending, and build better financial habits.</p>
+    </div>
+    <small>© MONIFY</small>
+  </aside>
+  <section class="auth-main">
+    <form class="auth-card" id="loginForm" novalidate>
+      <div class="logo auth-logo-mobile">MONIFY</div>
+      <h2>Masuk ke akun</h2>
+      <p class="muted">Selamat datang kembali. Lanjutkan mengatur keuanganmu.</p>
+      <div id="fl"></div>
+      <label class="field"><span>Email</span><input type="email" name="email" value="demo@monify.test" required autofocus></label>
+      <label class="field"><span>Password</span><input type="password" name="password" value="demo12345" required></label>
+      <p class="muted small" style="margin-bottom:14px">Akun demo sudah terisi. Tinggal klik Masuk.</p>
+      <button class="btn btn-primary btn-block" type="submit">Masuk</button>
+      <p class="auth-alt">Belum punya akun? <a href="register.html">Daftar</a></p>
+    </form>
+  </section>
+</div>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/core/helpers.js"></script>
+<script src="assets/js/core/data.js"></script>
+<script src="assets/js/core/queries.js"></script>
+<script src="assets/js/ui/layout.js"></script>
+<script src="assets/js/pages/auth.js"></script>
+</body>
+</html>

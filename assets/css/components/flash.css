@@ -1,0 +1,4 @@
+/* Pesan flash */
+.flash{padding:11px 14px;border-radius:10px;font-size:13.5px;margin-bottom:16px;border:1px solid transparent;transition:opacity .4s}
+.flash-success{background:var(--inc-bg);color:var(--inc);border-color:color-mix(in srgb,var(--inc) 25%,transparent)}
+.flash-error{background:var(--exp-bg);color:var(--exp);border-color:color-mix(in srgb,var(--exp) 25%,transparent)}

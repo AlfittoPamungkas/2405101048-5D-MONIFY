@@ -1,0 +1,6 @@
+/* Kelas bantu */
+.muted{color:var(--text-2)}.small{font-size:12px}.block{display:block}.r{text-align:right}
+i[data-lucide],svg.lucide{width:16px;height:16px;stroke-width:1.75;flex-shrink:0}
+.link{font-size:13px;color:var(--text-2);text-decoration:underline;text-underline-offset:3px}.link:hover{color:var(--text)}
+.empty{padding:28px 12px;text-align:center;color:var(--text-2)}.empty a{text-decoration:underline}
+.amt-inc{color:var(--inc)}.amt-exp{color:var(--exp)}

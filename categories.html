@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Categories MONIFY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <a class="logo" href="dashboard.html">MONIFY</a>
+    <nav class="nav">
+        <a href="dashboard.html"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></a>
+        <a href="transactions.html"><i data-lucide="arrow-left-right"></i><span>Transactions</span></a>
+        <a href="budgets.html"><i data-lucide="wallet"></i><span>Monthly Budget</span></a>
+        <a href="reports.html"><i data-lucide="chart-column"></i><span>Reports</span></a>
+        <a href="categories.html" class="active"><i data-lucide="tags"></i><span>Categories</span></a>
+        <a href="settings.html?tab=appearance" id="navSettings"><i data-lucide="settings"></i><span>Settings</span></a>
+        <a href="settings.html?tab=profile" id="navProfile"><i data-lucide="user"></i><span>Profile</span></a>
+    </nav>
+    <div class="sidebar-user">
+      <span class="avatar js-initials"></span>
+      <div class="who"><strong class="js-name"></strong><small class="js-email"></small></div>
+      <button class="icon-btn" id="logoutBtn" title="Logout" aria-label="Logout"><i data-lucide="log-out"></i></button>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="backdrop"></div>
+
+  <div class="main">
+    <!-- ===== TOPBAR ===== -->
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"><i data-lucide="menu"></i></button>
+      <div class="crumb"><span>MONIFY</span><i data-lucide="chevron-right"></i><strong id="crumbTitle">Categories</strong></div>
+      <div class="topbar-right">
+        <span class="top-date"><i data-lucide="calendar"></i><span id="todayDate"></span></span>
+        <a class="icon-btn bell" id="bell" href="budgets.html"><i data-lucide="bell"></i><span class="dot" id="bellDot" hidden></span></a>
+        <a class="avatar js-initials" href="settings.html?tab=profile"></a>
+      </div>
+    </header>
+
+    <!-- ===== ISI HALAMAN ===== -->
+    <main class="content">
+      <div id="fl"></div>
+
+      <div class="page-head">
+        <div><h1>Categories</h1><p class="muted">Kategori yang sudah dipakai transaksi tidak dapat dihapus agar riwayat tetap aman.</p></div>
+        <button class="btn btn-primary" id="addCatBtn"><i data-lucide="plus"></i>Tambah Kategori</button>
+      </div>
+
+      <div class="grid-2 grid-eq">
+        <div class="card">
+          <div class="card-head"><h3>Income Categories</h3><span class="muted small" id="incomeCount"></span></div>
+          <div class="empty" id="incomeEmpty" hidden>Belum ada kategori.</div>
+          <ul class="cat-list" id="incomeList"></ul>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Expense Categories</h3><span class="muted small" id="expenseCount"></span></div>
+          <div class="empty" id="expenseEmpty" hidden>Belum ada kategori.</div>
+          <ul class="cat-list" id="expenseList"></ul>
+        </div>
+      </div>
+
+      <!-- Modal tambah / edit kategori -->
+      <div class="modal" id="catModal" hidden>
+        <form class="modal-box modal-sm" id="catForm">
+          <div class="modal-head">
+            <h3 id="catTitle">Tambah Kategori</h3>
+            <button type="button" class="icon-btn" data-close aria-label="Tutup"><i data-lucide="x"></i></button>
+          </div>
+          <input type="hidden" id="catId">
+          <label class="field" id="catTypeWrap"><span>Jenis</span>
+            <select id="catType"><option value="expense">Expense</option><option value="income">Income</option></select>
+          </label>
+          <label class="field"><span>Nama</span><input type="text" id="catName" maxlength="80" required></label>
+          <label class="field"><span>Deskripsi <small class="muted">(opsional)</small></span><input type="text" id="catDesc" maxlength="255"></label>
+          <div class="modal-foot">
+            <button type="button" class="btn btn-ghost" data-close>Batal</button>
+            <button class="btn btn-primary" type="submit">Simpan</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Template item kategori -->
+      <template id="tplCatItem">
+        <li>
+          <span class="tx-ico js-ico"><i data-lucide="arrow-up-right"></i></span>
+          <div class="tx-info"><strong class="js-name"></strong><small class="js-info"></small></div>
+          <button class="icon-btn js-edit" title="Edit"><i data-lucide="pencil"></i></button>
+          <button class="icon-btn danger js-del" title="Hapus"><i data-lucide="trash-2"></i></button>
+        </li>
+      </template>
+
+    </main>
+  </div>
+</div>
+
+<!-- Library eksternal -->
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+
+<!-- Kode MONIFY (urutan penting: core → ui → halaman) -->
+<script src="assets/js/core/helpers.js"></script>
+<script src="assets/js/core/data.js"></script>
+<script src="assets/js/core/queries.js"></script>
+<script src="assets/js/ui/layout.js"></script>
+
+<script src="assets/js/pages/categories.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* Area grafik & legenda */
+.chart-box{position:relative;height:290px}.chart-box.tall{height:340px}
+.donut-box{position:relative;height:210px}
+.legend{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.legend li{display:flex;align-items:center;gap:10px;font-size:13px}
+.legend .sw{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.legend .nm{flex:1}.legend .vl{color:var(--text-2)}.legend .pc{width:46px;text-align:right;font-weight:500}

@@ -1,0 +1,9 @@
+/* Kartu & baris anggaran */
+.budget-row{padding:14px 0;border-top:1px solid var(--border)}.budget-row:first-of-type{border-top:0;padding-top:0}
+.budget-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.budget-meta{display:flex;justify-content:space-between;gap:8px;margin-top:8px;font-size:12px;color:var(--text-2);flex-wrap:wrap}
+.budget-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.budget-card{margin:0;position:relative}.budget-big{font-size:20px;font-weight:600;margin-bottom:10px}.budget-big small{font-size:13px;font-weight:400}
+.card-actions{display:flex;justify-content:flex-end;gap:4px;margin-top:12px;border-top:1px solid var(--border);padding-top:10px}.card-actions form{margin:0}
+.note{display:flex;gap:8px;align-items:center;font-size:12.5px;margin-top:12px;padding:8px 10px;border-radius:8px}
+.n-warning{background:var(--warn-bg);color:var(--warn)}.n-exceeded{background:var(--exp-bg);color:var(--exp)}

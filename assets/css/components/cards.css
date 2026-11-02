@@ -1,0 +1,4 @@
+/* Card & ringkasan */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.summary{display:flex;gap:12px;align-items:flex-start;color:var(--text-2)}.summary i{margin-top:3px}
