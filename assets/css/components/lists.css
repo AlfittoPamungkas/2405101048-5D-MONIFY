@@ -1,10 +1,77 @@
 /* Daftar transaksi & kategori */
-.tx-list,.cat-list{list-style:none;margin:0;padding:0}
-.tx-list li,.cat-list li{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--border)}
-.tx-list li:first-child,.cat-list li:first-child{border-top:0;padding-top:0}
-.cat-list form{margin:0}
-.tx-ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
-.tx-ico.income{background:var(--inc-bg);color:var(--inc)}.tx-ico.expense{background:var(--exp-bg);color:var(--exp)}
-.tx-info{flex:1;min-width:0;display:flex;flex-direction:column}
-.tx-info strong{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tx-info small{color:var(--text-2);font-size:12px}
-.tx-amt{text-align:right;font-weight:600;white-space:nowrap}.tx-amt small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+.tx-list,
+.cat-list {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.tx-list li,
+.cat-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border)
+}
+
+.tx-list li:first-child,
+.cat-list li:first-child {
+    border-top: 0;
+    padding-top: 0
+}
+
+.cat-list form {
+    margin: 0
+}
+
+.tx-ico {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0
+}
+
+.tx-ico.income {
+    background: var(--inc-bg);
+    color: var(--inc)
+}
+
+.tx-ico.expense {
+    background: var(--exp-bg);
+    color: var(--exp)
+}
+
+.tx-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column
+}
+
+.tx-info strong {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.tx-info small {
+    color: var(--text-2);
+    font-size: 12px
+}
+
+.tx-amt {
+    text-align: right;
+    font-weight: 600;
+    white-space: nowrap
+}
+
+.tx-amt small {
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--muted)
+}

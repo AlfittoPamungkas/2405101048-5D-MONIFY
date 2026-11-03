@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="id" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transactions MONIFY</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
-<div class="app">
 
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="sidebar" id="sidebar">
-    <a class="logo" href="dashboard.html">MONIFY</a>
-    <nav class="nav">
+<body>
+  <div class="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <a class="logo" href="dashboard.html">MONIFY</a>
+      <nav class="nav">
         <a href="dashboard.html"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></a>
         <a href="transactions.html" class="active"><i data-lucide="arrow-left-right"></i><span>Transactions</span></a>
         <a href="budgets.html"><i data-lucide="wallet"></i><span>Monthly Budget</span></a>
@@ -23,141 +26,164 @@
         <a href="categories.html"><i data-lucide="tags"></i><span>Categories</span></a>
         <a href="settings.html?tab=appearance" id="navSettings"><i data-lucide="settings"></i><span>Settings</span></a>
         <a href="settings.html?tab=profile" id="navProfile"><i data-lucide="user"></i><span>Profile</span></a>
-    </nav>
-    <div class="sidebar-user">
-      <span class="avatar js-initials"></span>
-      <div class="who"><strong class="js-name"></strong><small class="js-email"></small></div>
-      <button class="icon-btn" id="logoutBtn" title="Logout" aria-label="Logout"><i data-lucide="log-out"></i></button>
-    </div>
-  </aside>
-  <div class="sidebar-backdrop" id="backdrop"></div>
-
-  <div class="main">
-    <!-- ===== TOPBAR ===== -->
-    <header class="topbar">
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"><i data-lucide="menu"></i></button>
-      <div class="crumb"><span>MONIFY</span><i data-lucide="chevron-right"></i><strong id="crumbTitle">Transactions</strong></div>
-      <div class="topbar-right">
-        <span class="top-date"><i data-lucide="calendar"></i><span id="todayDate"></span></span>
-        <a class="icon-btn bell" id="bell" href="budgets.html"><i data-lucide="bell"></i><span class="dot" id="bellDot" hidden></span></a>
-        <a class="avatar js-initials" href="settings.html?tab=profile"></a>
+      </nav>
+      <div class="sidebar-user">
+        <span class="avatar js-initials"></span>
+        <div class="who"><strong class="js-name"></strong><small class="js-email"></small></div>
+        <button class="icon-btn" id="logoutBtn" title="Logout" aria-label="Logout"><i
+            data-lucide="log-out"></i></button>
       </div>
-    </header>
+    </aside>
+    <div class="sidebar-backdrop" id="backdrop"></div>
 
-    <!-- ===== ISI HALAMAN ===== -->
-    <main class="content">
-      <div id="fl"></div>
-
-      <div class="page-head">
-        <div><h1>Transactions</h1><p class="muted" id="txCount"></p></div>
-        <button class="btn btn-primary" id="addTxBtn"><i data-lucide="plus"></i>Add Transaction</button>
-      </div>
-
-      <!-- Filter -->
-      <form class="filters card" id="txFilter">
-        <label class="search"><i data-lucide="search"></i><input type="search" name="q" placeholder="Cari transaksi..."></label>
-        <select name="type">
-          <option value="">Semua jenis</option>
-          <option value="income">Income</option>
-          <option value="expense">Expense</option>
-        </select>
-        <select name="cat" id="filterCat"></select>
-        <input type="date" name="from" title="Dari tanggal">
-        <input type="date" name="to" title="Sampai tanggal">
-        <select name="sort">
-          <option value="desc">Terbaru dulu</option>
-          <option value="asc">Terlama dulu</option>
-        </select>
-        <button class="btn btn-ghost" type="submit">Terapkan</button>
-        <button class="btn btn-ghost" type="button" id="txReset" hidden>Reset</button>
-      </form>
-
-      <!-- Tabel -->
-      <div class="card table-card">
-        <div class="table-wrap">
-          <table class="table responsive-table">
-            <thead>
-              <tr><th>No.</th><th>Transaction</th><th>Category</th><th>Date</th><th>Type</th><th class="r">Amount</th><th class="r">Action</th></tr>
-            </thead>
-            <tbody id="txBody"></tbody>
-          </table>
+    <div class="main">
+      <!-- ===== TOPBAR ===== -->
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"><i data-lucide="menu"></i></button>
+        <div class="crumb"><span>MONIFY</span><i data-lucide="chevron-right"></i><strong
+            id="crumbTitle">Transactions</strong></div>
+        <div class="topbar-right">
+          <span class="top-date"><i data-lucide="calendar"></i><span id="todayDate"></span></span>
+          <a class="icon-btn bell" id="bell" href="budgets.html"><i data-lucide="bell"></i><span class="dot"
+              id="bellDot" hidden></span></a>
+          <a class="avatar js-initials" href="settings.html?tab=profile"></a>
         </div>
-        <div class="empty" id="txEmpty" hidden>Tidak ada transaksi.</div>
-        <nav class="pager" id="pager" hidden>
-          <button class="btn btn-ghost" id="prevBtn">‹ Prev</button>
-          <span id="pageInfo"></span>
-          <button class="btn btn-ghost" id="nextBtn">Next ›</button>
-        </nav>
-      </div>
+      </header>
 
-      <!-- Modal tambah / edit -->
-      <div class="modal" id="txModal" hidden>
-        <form class="modal-box" id="txForm">
-          <div class="modal-head">
-            <h3 id="txModalTitle">Add Transaction</h3>
-            <button type="button" class="icon-btn" data-close aria-label="Tutup"><i data-lucide="x"></i></button>
+      <!-- ===== ISI HALAMAN ===== -->
+      <main class="content">
+        <div id="fl"></div>
+
+        <div class="page-head">
+          <div>
+            <h1>Transactions</h1>
+            <p class="muted" id="txCount"></p>
           </div>
-          <input type="hidden" name="id" id="txId">
-          <div class="seg seg-radio">
-            <label><input type="radio" name="type" value="expense" checked><span>Expense</span></label>
-            <label><input type="radio" name="type" value="income"><span>Income</span></label>
-          </div>
-          <label class="field"><span>Transaction Name</span><input type="text" name="title" id="txTitle" maxlength="150" required></label>
-          <div class="row-2">
-            <label class="field"><span>Amount (Rp)</span><input type="number" name="amount" id="txAmount" min="1" step="1" required></label>
-            <label class="field"><span>Date</span><input type="date" name="date" id="txDate" required></label>
-          </div>
-          <label class="field"><span>Category</span><select name="category_id" id="txCategory" required></select></label>
-          <label class="field"><span>Description <small class="muted">(opsional)</small></span><textarea name="description" id="txDesc" rows="2" maxlength="1000"></textarea></label>
-          <div class="modal-foot">
-            <button type="button" class="btn btn-ghost" data-close>Batal</button>
-            <button class="btn btn-primary" type="submit">Simpan</button>
-          </div>
+          <button class="btn btn-primary" id="addTxBtn"><i data-lucide="plus"></i>Add Transaction</button>
+        </div>
+
+        <!-- Filter -->
+        <form class="filters card" id="txFilter">
+          <label class="search"><i data-lucide="search"></i><input type="search" name="q"
+              placeholder="Cari transaksi..."></label>
+          <select name="type">
+            <option value="">Semua jenis</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <select name="cat" id="filterCat"></select>
+          <input type="date" name="from" title="Dari tanggal">
+          <input type="date" name="to" title="Sampai tanggal">
+          <select name="sort">
+            <option value="desc">Terbaru dulu</option>
+            <option value="asc">Terlama dulu</option>
+          </select>
+          <button class="btn btn-ghost" type="submit">Terapkan</button>
+          <button class="btn btn-ghost" type="button" id="txReset" hidden>Reset</button>
         </form>
-      </div>
 
-      <!-- Modal konfirmasi hapus -->
-      <div class="modal" id="delModal" hidden>
-        <form class="modal-box modal-sm" id="delForm">
-          <div class="modal-head"><h3>Hapus transaksi?</h3></div>
-          <input type="hidden" id="delId">
-          <p class="muted">“<span id="delTitle"></span>” akan dihapus permanen dan tidak bisa dikembalikan.</p>
-          <div class="modal-foot">
-            <button type="button" class="btn btn-ghost" data-close>Batal</button>
-            <button class="btn btn-danger" type="submit">Hapus</button>
+        <!-- Tabel -->
+        <div class="card table-card">
+          <div class="table-wrap">
+            <table class="table responsive-table">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Transaction</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th class="r">Amount</th>
+                  <th class="r">Action</th>
+                </tr>
+              </thead>
+              <tbody id="txBody"></tbody>
+            </table>
           </div>
-        </form>
-      </div>
+          <div class="empty" id="txEmpty" hidden>Tidak ada transaksi.</div>
+          <nav class="pager" id="pager" hidden>
+            <button class="btn btn-ghost" id="prevBtn">‹ Prev</button>
+            <span id="pageInfo"></span>
+            <button class="btn btn-ghost" id="nextBtn">Next ›</button>
+          </nav>
+        </div>
 
-      <!-- Template baris tabel -->
-      <template id="tplTxRow">
-        <tr>
-          <td data-label="No." class="js-no"></td>
-          <td data-label="Transaction"><strong class="js-title"></strong><small class="muted block js-desc"></small></td>
-          <td data-label="Category" class="js-cat"></td>
-          <td data-label="Date" class="js-date"></td>
-          <td data-label="Type"><span class="badge js-type"></span></td>
-          <td data-label="Amount" class="r js-amount"></td>
-          <td data-label="Action" class="r actions">
-            <button class="icon-btn js-edit" title="Edit"><i data-lucide="pencil"></i></button>
-            <button class="icon-btn danger js-del" title="Hapus"><i data-lucide="trash-2"></i></button>
-          </td>
-        </tr>
-      </template>
+        <!-- Modal tambah / edit -->
+        <div class="modal" id="txModal" hidden>
+          <form class="modal-box" id="txForm">
+            <div class="modal-head">
+              <h3 id="txModalTitle">Add Transaction</h3>
+              <button type="button" class="icon-btn" data-close aria-label="Tutup"><i data-lucide="x"></i></button>
+            </div>
+            <input type="hidden" name="id" id="txId">
+            <div class="seg seg-radio">
+              <label><input type="radio" name="type" value="expense" checked><span>Expense</span></label>
+              <label><input type="radio" name="type" value="income"><span>Income</span></label>
+            </div>
+            <label class="field"><span>Transaction Name</span><input type="text" name="title" id="txTitle"
+                maxlength="150" required></label>
+            <div class="row-2">
+              <label class="field"><span>Amount (Rp)</span><input type="number" name="amount" id="txAmount" min="1"
+                  step="1" required></label>
+              <label class="field"><span>Date</span><input type="date" name="date" id="txDate" required></label>
+            </div>
+            <label class="field"><span>Category</span><select name="category_id" id="txCategory"
+                required></select></label>
+            <label class="field"><span>Description <small class="muted">(opsional)</small></span><textarea
+                name="description" id="txDesc" rows="2" maxlength="1000"></textarea></label>
+            <div class="modal-foot">
+              <button type="button" class="btn btn-ghost" data-close>Batal</button>
+              <button class="btn btn-primary" type="submit">Simpan</button>
+            </div>
+          </form>
+        </div>
 
-    </main>
+        <!-- Modal konfirmasi hapus -->
+        <div class="modal" id="delModal" hidden>
+          <form class="modal-box modal-sm" id="delForm">
+            <div class="modal-head">
+              <h3>Hapus transaksi?</h3>
+            </div>
+            <input type="hidden" id="delId">
+            <p class="muted">“<span id="delTitle"></span>” akan dihapus permanen dan tidak bisa dikembalikan.</p>
+            <div class="modal-foot">
+              <button type="button" class="btn btn-ghost" data-close>Batal</button>
+              <button class="btn btn-danger" type="submit">Hapus</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Template baris tabel -->
+        <template id="tplTxRow">
+          <tr>
+            <td data-label="No." class="js-no"></td>
+            <td data-label="Transaction"><strong class="js-title"></strong><small class="muted block js-desc"></small>
+            </td>
+            <td data-label="Category" class="js-cat"></td>
+            <td data-label="Date" class="js-date"></td>
+            <td data-label="Type"><span class="badge js-type"></span></td>
+            <td data-label="Amount" class="r js-amount"></td>
+            <td data-label="Action" class="r actions">
+              <button class="icon-btn js-edit" title="Edit"><i data-lucide="pencil"></i></button>
+              <button class="icon-btn danger js-del" title="Hapus"><i data-lucide="trash-2"></i></button>
+            </td>
+          </tr>
+        </template>
+
+      </main>
+    </div>
   </div>
-</div>
 
-<!-- Library eksternal -->
-<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <!-- Library eksternal -->
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 
-<!-- Kode MONIFY (urutan penting: core → ui → halaman) -->
-<script src="assets/js/core/helpers.js"></script>
-<script src="assets/js/core/data.js"></script>
-<script src="assets/js/core/queries.js"></script>
-<script src="assets/js/ui/layout.js"></script>
+  <!-- Kode MONIFY (urutan penting: core → ui → halaman) -->
+  <script src="assets/js/core/helpers.js"></script>
+  <script src="assets/js/core/data.js"></script>
+  <script src="assets/js/core/queries.js"></script>
+  <script src="assets/js/ui/layout.js"></script>
 
-<script src="assets/js/pages/transactions.js"></script>
+  <script src="assets/js/pages/transactions.js"></script>
 </body>
+
 </html>

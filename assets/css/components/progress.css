@@ -1,4 +1,23 @@
 /* Progress bar */
-.progress{height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden}
-.progress span{display:block;height:100%;border-radius:99px;background:var(--inc);transition:width .4s}
-.progress.s-warning span{background:var(--warn)}.progress.s-exceeded span{background:var(--exp)}
+.progress {
+    height: 6px;
+    background: var(--surface-2);
+    border-radius: 99px;
+    overflow: hidden
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    border-radius: 99px;
+    background: var(--inc);
+    transition: width .4s
+}
+
+.progress.s-warning span {
+    background: var(--warn)
+}
+
+.progress.s-exceeded span {
+    background: var(--exp)
+}

@@ -22,7 +22,7 @@
     const n = NOW; let f, t;
     if (range === '7d') { f = ago(6); t = ago(0); }
     else if (range === 'last') { f = iso(new Date(CY, CM - 2, 1)); t = iso(new Date(CY, CM - 1, 0)); }
-    else [f, t] = mrange(CM, CY);
+    else[f, t] = mrange(CM, CY);
     const labels = [], income = [], expense = [];
     for (let d = new Date(f + 'T00:00'); iso(d) <= t; d.setDate(d.getDate() + 1)) {
       const k = iso(d), s = ty => sum(S.tx.filter(x => x.date === k && x.type === ty));

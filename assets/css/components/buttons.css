@@ -1,9 +1,87 @@
 /* Tombol */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 16px;border-radius:10px;border:1px solid transparent;font:inherit;font-weight:500;cursor:pointer;transition:.15s;white-space:nowrap}
-.btn-primary{background:var(--btn);color:var(--btn-text)}.btn-primary:hover{opacity:.88}
-.btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text)}.btn-ghost:hover{background:var(--surface-2)}
-.btn-danger{background:var(--exp);color:#fff}.btn-danger:hover{opacity:.9}
-.btn-block{width:100%}.btn.disabled{opacity:.4;pointer-events:none}
-.icon-btn{position:relative;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;border:1px solid transparent;background:transparent;color:var(--text-2);cursor:pointer;transition:.15s}
-.icon-btn:hover{background:var(--surface-2);color:var(--text)}.icon-btn.danger:hover{color:var(--exp);background:var(--exp-bg)}
-.bell .dot{position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--exp);border:1.5px solid var(--bg)}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .15s;
+    white-space: nowrap
+}
+
+.btn-primary {
+    background: var(--btn);
+    color: var(--btn-text)
+}
+
+.btn-primary:hover {
+    opacity: .88
+}
+
+.btn-ghost {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--text)
+}
+
+.btn-ghost:hover {
+    background: var(--surface-2)
+}
+
+.btn-danger {
+    background: var(--exp);
+    color: #fff
+}
+
+.btn-danger:hover {
+    opacity: .9
+}
+
+.btn-block {
+    width: 100%
+}
+
+.btn.disabled {
+    opacity: .4;
+    pointer-events: none
+}
+
+.icon-btn {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: .15s
+}
+
+.icon-btn:hover {
+    background: var(--surface-2);
+    color: var(--text)
+}
+
+.icon-btn.danger:hover {
+    color: var(--exp);
+    background: var(--exp-bg)
+}
+
+.bell .dot {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--exp);
+    border: 1.5px solid var(--bg)
+}

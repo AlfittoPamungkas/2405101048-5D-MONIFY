@@ -1,25 +1,175 @@
 /* Sidebar, topbar, area konten */
-.app{display:flex;min-height:100vh}
-.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:20px 14px;z-index:40}
-.logo{font-weight:700;font-size:20px;letter-spacing:.18em;padding:4px 10px 22px}
-.nav{display:flex;flex-direction:column;gap:2px;flex:1}
-.nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:var(--text-2);font-weight:500;transition:.15s}
-.nav a:hover{background:var(--surface-2);color:var(--text)}
-.nav a.active{background:var(--surface-2);color:var(--text);box-shadow:inset 2px 0 0 var(--text)}
-.sidebar-user{display:flex;align-items:center;gap:10px;padding:12px 8px 0;border-top:1px solid var(--border)}
-.who{min-width:0;flex:1;display:flex;flex-direction:column}
-.who strong{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.who small{color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.avatar{width:34px;height:34px;border-radius:50%;background:var(--text);color:var(--bg);display:inline-grid;place-items:center;font-size:12px;font-weight:600;flex-shrink:0}
-.avatar.lg{width:52px;height:52px;font-size:16px}
-.main{flex:1;margin-left:248px;min-width:0}
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 32px;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
-.crumb{display:flex;align-items:center;gap:6px;color:var(--text-2);font-size:13px}
-.crumb strong{color:var(--text);font-weight:600}
-.topbar-right{margin-left:auto;display:flex;align-items:center;gap:12px}
-.top-date{display:flex;align-items:center;gap:6px;color:var(--text-2);font-size:13px}
-.menu-btn{display:none}
-.content{padding:28px 32px 56px;max-width:1280px}
-.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:22px;flex-wrap:wrap}
-.page-head p{margin-top:4px}
-.sidebar-backdrop{display:none}
+.app {
+    display: flex;
+    min-height: 100vh
+}
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 248px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 14px;
+    z-index: 40
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: .18em;
+    padding: 4px 10px 22px
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 9px;
+    color: var(--text-2);
+    font-weight: 500;
+    transition: .15s
+}
+
+.nav a:hover {
+    background: var(--surface-2);
+    color: var(--text)
+}
+
+.nav a.active {
+    background: var(--surface-2);
+    color: var(--text);
+    box-shadow: inset 2px 0 0 var(--text)
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 8px 0;
+    border-top: 1px solid var(--border)
+}
+
+.who {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column
+}
+
+.who strong {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.who small {
+    color: var(--muted);
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--bg);
+    display: inline-grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0
+}
+
+.avatar.lg {
+    width: 52px;
+    height: 52px;
+    font-size: 16px
+}
+
+.main {
+    flex: 1;
+    margin-left: 248px;
+    min-width: 0
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 32px;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border)
+}
+
+.crumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-2);
+    font-size: 13px
+}
+
+.crumb strong {
+    color: var(--text);
+    font-weight: 600
+}
+
+.topbar-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.top-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-2);
+    font-size: 13px
+}
+
+.menu-btn {
+    display: none
+}
+
+.content {
+    padding: 28px 32px 56px;
+    max-width: 1280px
+}
+
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 22px;
+    flex-wrap: wrap
+}
+
+.page-head p {
+    margin-top: 4px
+}
+
+.sidebar-backdrop {
+    display: none
+}

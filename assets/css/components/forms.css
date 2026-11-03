@@ -1,9 +1,56 @@
 /* Input & field */
-input,select,textarea{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 12px;width:100%;transition:border .15s,box-shadow .15s}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--text-2);box-shadow:0 0 0 3px color-mix(in srgb,var(--text) 8%,transparent)}
-textarea{resize:vertical}
-.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-.field>span{font-size:13px;font-weight:500}
-.check{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2);margin-bottom:16px}
-.check input{width:auto}
-.row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,
+select,
+textarea {
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    width: 100%;
+    transition: border .15s, box-shadow .15s
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--text-2);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--text) 8%, transparent)
+}
+
+textarea {
+    resize: vertical
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px
+}
+
+.field>span {
+    font-size: 13px;
+    font-weight: 500
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-2);
+    margin-bottom: 16px
+}
+
+.check input {
+    width: auto
+}
+
+.row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
